@@ -1,0 +1,26 @@
+{
+    "global_metrics": {
+        "accuracy": 0.56,
+        "f1_macro": 0.4887,
+        "roc_auc": 0.5311,
+        "confusion_matrix": [
+            [
+                70,
+                9
+            ],
+            [
+                57,
+                14
+            ]
+        ]
+    },
+    "fairness_audit": {
+        "f1_by_sector": {
+            "Comercio": 0.4935,
+            "Manufactura": 0.4419,
+            "Servicios": 0.4857
+        },
+        "max_delta": 0.0516,
+        "fairness_passed": false
+    }
+}
