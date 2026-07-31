@@ -1,0 +1,33 @@
+# ============================================
+# ITACA Project - Dependencias principales
+# ============================================
+
+# --- Core Data Science ---
+numpy>=1.24,<3.0
+pandas>=2.0
+scikit-learn>=1.3
+
+# --- Deep Learning (CPU-only) ---
+tensorflow-cpu>=2.15
+torch --index-url https://download.pytorch.org/whl/cpu
+sentence-transformers>=2.2
+
+# --- Serialización ---
+joblib>=1.3
+
+# --- API ---
+fastapi>=0.100
+uvicorn[standard]>=0.20
+pydantic>=2.0
+python-dotenv>=1.0
+
+# --- Visualización ---
+matplotlib>=3.7
+seaborn>=0.13
+
+# --- Testing ---
+pytest>=7.0
+httpx>=0.24
+
+# --- Utilidades ---
+python-multipart>=0.0.6
