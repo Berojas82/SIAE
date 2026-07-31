@@ -1,0 +1,20 @@
+"""
+Configuración e hiperparámetros del modelo híbrido TensorFlow / Keras.
+"""
+
+TEXT_EMBEDDING_DIM = 384
+NUM_CLASSES = 4
+
+# Hiperparámetros de Red Neuronal
+TEXT_DENSE_UNITS_1 = 128
+TEXT_DENSE_UNITS_2 = 64
+
+TABULAR_DENSE_UNITS_1 = 64
+TABULAR_DENSE_UNITS_2 = 32
+
+COMBINED_DENSE_UNITS = 64
+DROPOUT_RATE = 0.3
+
+LEARNING_RATE = 0.001
+BATCH_SIZE = 32
+EPOCHS = 30

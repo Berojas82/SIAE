@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.api
+    container_name: itaca_api
+    ports:
+      - "8000:8000"
+    restart: always
+
+  frontend:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.frontend
+    container_name: itaca_frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - api
+    restart: always

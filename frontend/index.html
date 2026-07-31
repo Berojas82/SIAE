@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITACA - Autodiagnóstico Empresarial de Madurez Digital</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-decor font-blur"></div>
+    <main class="container">
+        <!-- Header -->
+        <header class="header-card">
+            <div class="logo-badge">
+                <span class="pulse-dot"></span>
+                <span>ITACA AI Engine v2.0</span>
+            </div>
+            <h1>Autodiagnóstico de Madurez Digital</h1>
+            <p>Evaluación multimodal basada en Inteligencia Artificial (Red Híbrida TensorFlow + NLP SentenceTransformers)</p>
+        </header>
+
+        <div class="grid-layout">
+            <!-- Form Card -->
+            <section class="card form-card">
+                <h2>📋 Datos de la Empresa</h2>
+                <form id="diagnosisForm">
+                    <div class="form-group">
+                        <label for="sector">Sector Económico</label>
+                        <select id="sector" required>
+                            <option value="" disabled selected>Seleccione un sector...</option>
+                            <option value="Tecnología">Tecnología</option>
+                            <option value="Manufactura">Manufactura</option>
+                            <option value="Retail">Retail</option>
+                            <option value="Servicios">Servicios</option>
+                            <option value="Salud">Salud</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tamano_empresa">Tamaño de la Empresa</label>
+                        <select id="tamano_empresa" required>
+                            <option value="" disabled selected>Seleccione el tamaño...</option>
+                            <option value="Micro">Micro (1-10 empleados)</option>
+                            <option value="Pequeña">Pequeña (11-50 empleados)</option>
+                            <option value="Mediana">Mediana (51-200 empleados)</option>
+                            <option value="Grande">Grande (>200 empleados)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="porcentaje_procesos_documentados">
+                            Procesos Documentados (%) 
+                            <span id="pctValue" class="badge">15%</span>
+                        </label>
+                        <input type="range" id="porcentaje_procesos_documentados" min="0" max="100" value="15" step="1">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="presupuesto_anual_tecnología">Presupuesto Anual Tecnología (USD)</label>
+                        <input type="number" id="presupuesto_anual_tecnología" placeholder="Ej: 15000" min="0" step="1000" value="15000" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="respuesta_texto">Estado Cualitativo de Procesos (Texto Libre)</label>
+                        <textarea id="respuesta_texto" rows="4" placeholder="Describa el nivel de automatización, herramientas usadas y metodología de trabajo..." required>El trabajo es muy empírico, dependemos de registros en papel y hojas de cálculo desordenadas.</textarea>
+                    </div>
+
+                    <button type="submit" id="submitBtn" class="btn-primary">
+                        <span class="btn-text">⚡ Generar Diagnóstico IA</span>
+                        <span class="spinner hidden"></span>
+                    </button>
+                </form>
+            </section>
+
+            <!-- Results Card -->
+            <section class="card results-card" id="resultsSection">
+                <div class="empty-state" id="emptyState">
+                    <div class="icon">📊</div>
+                    <h3>Esperando Evaluación</h3>
+                    <p>Complete el formulario y presione "Generar Diagnóstico IA" para obtener el dictamen del modelo híbrido.</p>
+                </div>
+
+                <div class="results-content hidden" id="resultsContent">
+                    <div class="result-badge-container">
+                        <span class="label-title">Nivel de Madurez Evaluado</span>
+                        <div class="level-badge" id="levelBadge">Inicial</div>
+                        <div class="confidence" id="confidenceScore">Confianza del modelo: 85.4%</div>
+                    </div>
+
+                    <div class="probabilities-section">
+                        <h4>Distribución de Probabilidades por Clase</h4>
+                        <div class="prob-bars" id="probBars"></div>
+                    </div>
+
+                    <div class="recommendation-box">
+                        <h4>💡 Recomendación Estratégica Principal</h4>
+                        <p id="recommendationText">Cargando recomendación...</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
