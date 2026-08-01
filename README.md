@@ -1,7 +1,3 @@
-<<<<<<< Updated upstream
-# SIAE
-Sistema Inteligente de Autodiagnóstico Empresarial mediante IA para ITACA
-=======
 # SIAE - Sistema Inteligente de Autodiagnóstico Empresarial (Proyecto ITACA)
 
 Motor de IA multimodal híbrido (TensorFlow/Keras + SentenceTransformers) para el autodiagnóstico empresarial de madurez digital.
@@ -58,4 +54,3 @@ docker-compose up --build
 ```
 - API REST: `http://localhost:8000`
 - Frontend Web: `http://localhost:80`
->>>>>>> Stashed changes
