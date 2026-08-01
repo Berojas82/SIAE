@@ -33,14 +33,14 @@ class DataLoader:
         # 1. Separar 15% para Test
         res1 = train_test_split(
             df,
-            test_size=0.15,
+            test_size=0.10,
             random_state=self.seed,
             stratify=df[TARGET_COL]
         )
         train_val_df, test_df = cast(Tuple[pd.DataFrame, pd.DataFrame], res1)
 
         # 2. Del 85% restante, separar 15/85 (= 17.647%) para Validación -> 15% del total
-        val_relative_size = 0.15 / 0.85
+        val_relative_size = 0.10 / 0.90
         res2 = train_test_split(
             train_val_df,
             test_size=val_relative_size,
