@@ -76,6 +76,6 @@ class ITACAModelEvaluator:
         logger.info("--- AUDITORÍA DE EQUIDAD POR SECTOR ---")
         for sec, score in f["f1_by_sector"].items():
             logger.info(f" Sector {sec:12s} | F1-Macro: {score:.4f}")
-        logger.info(f"Disparidad Máxima ΔF1: {f['max_delta']*100:.2f}% (Límite: {f['tolerance_threshold']*100:.1f}%)")
+        logger.info(f"Disparidad Maxima Delta F1: {f['max_delta']*100:.2f}% (Limite: {f['tolerance_threshold']*100:.1f}%)")
         logger.info(f"Estado de Equidad    : {'[APROBADO]' if f['fairness_passed'] else '[RECHAZADO]'}")
         logger.info("===================================================\n")

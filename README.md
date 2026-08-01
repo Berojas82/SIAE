@@ -4,7 +4,7 @@ Motor de IA multimodal híbrido (TensorFlow/Keras + SentenceTransformers) para e
 
 ## Estructura del Repositorio
 
-- `src/`: Código fuente principal (cargador de datos, preprocesamiento multimodal, modelo híbrido, evaluador y API REST).
+- `src/`: Código fuente  principal (cargador de datos, preprocesamiento multimodal, modelo híbrido, evaluador y API REST).
 - `scripts/`: Scripts CLI para entrenamiento (`train.py`), evaluación (`evaluate.py`), inferencia CLI (`predict.py`) y servidor web (`serve.py`).
 - `notebooks/`: Notebooks de análisis y preparación (`01_EDA.ipynb`, `02_Preprocesamiento_de_datos.ipynb`, `03_Procesamiento_y_preparación_de_datos.ipynb`, `04_evaluation.ipynb`).
 - `frontend/`: Cliente Web interactivo (HTML5/CSS3/JS vanilla con diseño glassmorphism).
