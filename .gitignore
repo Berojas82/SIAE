@@ -1,7 +1,5 @@
 .venv/
 proyecto_itaca/.venv/
-artifacts/
-proyecto_itaca/artifacts/
 data/splits/
 __pycache__/
 *.pyc

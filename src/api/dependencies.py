@@ -90,9 +90,9 @@ class ModelContainer:
 
             self.is_loaded = self.model is not None and self.tabular_preprocessor is not None
             if self.is_loaded:
-                logger.info("✅ Todos los artefactos fueron cargados exitosamente.")
+                logger.info("[OK] Todos los artefactos fueron cargados exitosamente.")
             else:
-                logger.warning("⚠️ Los artefactos no están completos. La API funcionará en modo degradado/mock.")
+                logger.warning("[WARNING] Los artefactos no están completos. La API funcionará en modo degradado/mock.")
         except Exception as e:
             logger.error(f"Error al cargar artefactos: {str(e)}")
             self.is_loaded = False

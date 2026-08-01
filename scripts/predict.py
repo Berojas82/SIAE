@@ -38,7 +38,7 @@ def main():
         respuesta_texto=texto
     )
 
-    print("📌 [RESULTADO DE PREDICCIÓN]:")
+    print("\n--- [RESULTADO DE PREDICCION] ---")
     print(json.dumps(res, indent=4, ensure_ascii=False))
 
 if __name__ == "__main__":
