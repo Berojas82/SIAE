@@ -90,16 +90,13 @@ def main():
     hybrid_model = HybridModel(tabular_input_dim=tabular_dim, text_input_dim=text_dim, num_classes=num_classes)
     logger.info(f"Arquitectura creada: Tabular Dim={tabular_dim}, Text Dim={text_dim}, Clases={num_classes}")
 
-    hybrid_model.train(
-        X_tabular_train=X_tab_train,
-        X_text_train=X_text_train,
-        y_train=y_train_cat,
-        X_tabular_val=X_tab_val,
-        X_text_val=X_text_val,
-        y_val=y_val_cat,
-        epochs=30,
-        batch_size=32
-    )
+    for fold in range(5):
+        logger.info(f"Entrenando modelo híbrido - Fold {fold + 1}/5...")
+        hybrid_model.train(
+            X_tab_train, X_text_train, y_train_cat,
+            X_tab_val, X_text_val, y_val_cat,
+            epochs=10, batch_size=32
+        )
 
     # 7. Evaluación y Auditoría de Equidad en Test Set
     logger.info("Evaluando modelo en el conjunto de prueba (Test)...")
