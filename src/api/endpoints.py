@@ -4,6 +4,9 @@ Definición de endpoints HTTP para la API de ITACA.
 from fastapi import APIRouter, HTTPException, status
 from .schemas import PredictionRequest, PredictionResponse
 from .dependencies import container
+from ..utils.logger import get_logger
+
+logger = get_logger("APIEndpoints")
 
 router = APIRouter()
 
@@ -31,7 +34,8 @@ def predict(payload: PredictionRequest):
         )
         return res
     except Exception as e:
+        logger.exception("Fallo durante la inferencia")
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Error durante la inferencia: {str(e)}"
+            detail="Error interno al generar el diagnostico. Intente nuevamente."
         )
