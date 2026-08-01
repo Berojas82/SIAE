@@ -1,0 +1,93 @@
+{
+    "num_classes": 4,
+    "classes": [
+        "Definido",
+        "En Desarrollo",
+        "Inicial",
+        "Optimizado"
+    ],
+    "tabular_input_dim": 10,
+    "text_input_dim": 384,
+    "metrics": {
+        "global_metrics": {
+            "accuracy": 1.0,
+            "f1_macro": 1.0,
+            "confusion_matrix": [
+                [
+                    137,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    139,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    117,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    57
+                ]
+            ],
+            "classification_report": {
+                "Definido": {
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1-score": 1.0,
+                    "support": 137.0
+                },
+                "En Desarrollo": {
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1-score": 1.0,
+                    "support": 139.0
+                },
+                "Inicial": {
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1-score": 1.0,
+                    "support": 117.0
+                },
+                "Optimizado": {
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1-score": 1.0,
+                    "support": 57.0
+                },
+                "accuracy": 1.0,
+                "macro avg": {
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1-score": 1.0,
+                    "support": 450.0
+                },
+                "weighted avg": {
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1-score": 1.0,
+                    "support": 450.0
+                }
+            }
+        },
+        "fairness_audit": {
+            "f1_by_sector": {
+                "Manufactura": 1.0,
+                "Retail": 1.0,
+                "Servicios": 1.0,
+                "Tecnología": 1.0
+            },
+            "max_delta": 0.0,
+            "fairness_passed": true,
+            "tolerance_threshold": 0.05
+        }
+    }
+}
