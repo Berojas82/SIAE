@@ -6,7 +6,7 @@
         "Inicial",
         "Optimizado"
     ],
-    "tabular_input_dim": 10,
+    "tabular_input_dim": 9,
     "text_input_dim": 384,
     "metrics": {
         "global_metrics": {

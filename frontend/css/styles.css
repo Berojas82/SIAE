@@ -1,18 +1,21 @@
 :root {
-    --bg-dark: #0f172a;
-    --card-bg: rgba(30, 41, 59, 0.7);
-    --border-color: rgba(255, 255, 255, 0.1);
-    --primary: #3b82f6;
-    --primary-hover: #2563eb;
-    --accent: #8b5cf6;
-    --text-main: #f8fafc;
-    --text-muted: #94a3b8;
+    /* Paleta Corporativa */
+    --primary-red: #ED202D;
+    /* Acciones principales, alertas y errores */
+    --accent-cyan: #23C2E8;
+    /* Elementos interactivos, badges de IA */
+    --dark-anthracite: #353638;
+    /* Encabezados, tarjetas oscuras y sidebars */
+    --warning-yellow: #FFD600;
+    /* Alertas de confianza y recomendaciones */
+    --light-gray: #F1F0EF;
+    /* Fondo general claro de la aplicación */
 
-    --badge-inicial: #ef4444;
-    --badge-desarrollo: #f59e0b;
-    --badge-definido: #3b82f6;
-    --badge-optimizado: #10b981;
+    /* Estilos de Contenedor */
+    --text-main: #1F2937;
+    --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
 }
+
 
 * {
     box-sizing: border-box;
@@ -40,7 +43,7 @@ body {
     transform: translateX(-50%);
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.25) 0%, rgba(59, 130, 246, 0.15) 50%, transparent 70%);
+    background: radial-gradient(circle, #F1F0EF 0%, #353638 50%, transparent 70%);
     filter: blur(80px);
     z-index: 0;
     pointer-events: none;
@@ -62,11 +65,11 @@ body {
     align-items: center;
     gap: 8px;
     padding: 6px 14px;
-    background: rgba(139, 92, 246, 0.15);
+    background: #F1F0EF;
     border: 1px solid rgba(139, 92, 246, 0.3);
     border-radius: 20px;
     font-size: 0.85rem;
-    color: #c084fc;
+    color: #1F2937;
     margin-bottom: 0.75rem;
 }
 
@@ -80,9 +83,20 @@ body {
 }
 
 @keyframes pulse {
-    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-    70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
-    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    }
 }
 
 h1 {
@@ -149,7 +163,9 @@ label {
     font-size: 0.75rem;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
     width: 100%;
     padding: 0.75rem;
     background: rgba(15, 23, 42, 0.6);
@@ -160,7 +176,9 @@ input, select, textarea {
     transition: border-color 0.2s;
 }
 
-input:focus, select:focus, textarea:focus {
+input:focus,
+select:focus,
+textarea:focus {
     outline: none;
     border-color: var(--primary);
 }

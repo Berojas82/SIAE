@@ -3,7 +3,7 @@ Modelo Híbrido Multimodal (Texto + Tabular) en TensorFlow / Keras (Functional A
 """
 import numpy as np
 import tensorflow as tf
-from tensorflow.keras import layers, models  # type: ignore
+from tensorflow.keras import layers, models, regularizers  # type: ignore
 from typing import Tuple, Dict, Any, Optional
 
 from .text_branch import build_text_branch
@@ -39,7 +39,7 @@ class HybridModel:
 
         # Concatenación
         combined = layers.Concatenate(name="fusion_concatenate")([text_out, tab_out])
-        x = layers.Dense(COMBINED_DENSE_UNITS, activation="relu", name="fusion_dense")(combined)
+        x = layers.Dense(COMBINED_DENSE_UNITS, activation="relu", kernel_regularizer=regularizers.l2(1e-4), name="fusion_dense")(combined)
         x = layers.Dropout(DROPOUT_RATE, name="fusion_dropout")(x)
 
         # Capa de salida (4 clases Softmax: nivel_madurez)

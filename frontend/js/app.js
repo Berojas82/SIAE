@@ -11,6 +11,73 @@ document.addEventListener('DOMContentLoaded', () => {
     const recommendationText = document.getElementById('recommendationText');
     const submitBtn = document.getElementById('submitBtn');
 
+    // Payloads precargados para la sustentación
+    const CASOS_DEMO = {
+        inicial: {
+            sector: "Manufactura",
+            tamano_empresa: "Micro",
+            porcentaje_procesos_documentados: 5,
+            presupuesto_anual_tecnología: 3000000,
+            respuesta_texto: "Todo lo anotamos en cuadernos y se nos pierde la información."
+        },
+        intermedio: {
+            sector: "Comercio",
+            tamano_empresa: "Pequeña",
+            porcentaje_procesos_documentados: 35,
+            presupuesto_anual_tecnología: 8000000,
+            respuesta_texto: "Tenemos algunas herramientas digitales pero no están integradas."
+        },
+        optimizado: {
+            sector: "Tecnología",
+            tamano_empresa: "Grande",
+            porcentaje_procesos_documentados: 92,
+            presupuesto_anual_tecnología: 250000000,
+            respuesta_texto: "Automatizamos el ciclo completo y medimos todo con tableros de control."
+        }
+    };
+
+    function cargarCasoDemo(nombreCaso) {
+        const c = CASOS_DEMO[nombreCaso];
+        if (!c) return;
+
+        document.getElementById('sector').value = c.sector;
+        document.getElementById('tamano_empresa').value = c.tamano_empresa;
+        document.getElementById('porcentaje_procesos_documentados').value = c.porcentaje_procesos_documentados;
+        document.getElementById('presupuesto_anual_tecnología').value = c.presupuesto_anual_tecnología;
+        document.getElementById('respuesta_texto').value = c.respuesta_texto;
+    }
+
+    const UMBRAL_CONFIANZA = 0.55; // Definido en las especificaciones del plan
+
+    function procesarRespuestaAPI(data) {
+        const { nivel_madurez, confidence_score, recomendacion_principal } = data;
+
+        // Actualizar métricas visuales
+        document.getElementById('nivelMadurez').textContent = nivel_madurez;
+        document.getElementById('confidenceScore').textContent = `Confianza IA: ${(confidence_score * 100).toFixed(1)}%`;
+
+        // Control de aviso por baja confianza
+        const aviso = document.getElementById('avisoConfianza');
+        if (confidence_score < UMBRAL_CONFIANZA) {
+            aviso.textContent = "⚠️ Diagnóstico preliminar: Se sugiere revisión manual por un consultor humano debido a baja certeza del modelo.";
+            aviso.style.display = 'block';
+            aviso.style.backgroundColor = 'var(--warning-yellow)';
+        } else {
+            aviso.style.display = 'none';
+        }
+
+        document.getElementById('recomendacion').textContent = recomendacion_principal;
+    }
+
+    // Reemplazo de alert() nativo por mensaje en interfaz
+    function mostrarErrorUI(mensaje) {
+        const contenedorError = document.getElementById('mensajeError');
+        contenedorError.textContent = mensaje;
+        contenedorError.style.display = 'block';
+        contenedorError.style.color = 'var(--primary-red)';
+    }
+
+
     // Actualizar valor de rango
     rangeInput.addEventListener('input', (e) => {
         pctValue.textContent = `${e.target.value}%`;
