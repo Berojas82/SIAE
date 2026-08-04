@@ -66,7 +66,7 @@ def main():
 
     print("Entrenando modelo de ablación solo-texto...")
     modelo.fit(
-        X_tr, y_tr_cat,
+        X_tr, y_tr_cat,  # type: ignore[arg-type]
         validation_data=val_data,
         epochs=30,
         batch_size=32,
@@ -74,7 +74,7 @@ def main():
     )
 
     # 4. Evaluar con el auditor del proyecto
-    probs = modelo.predict(X_te, verbose=0)
+    probs = modelo.predict(X_te, verbose=0)  # type: ignore[arg-type]
     preds = np.argmax(probs, axis=1)
 
     auditor = ITACAModelEvaluator(max_fairness_delta=0.05, class_names=clases)

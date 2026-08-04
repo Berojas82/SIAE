@@ -4,43 +4,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ITACA - Autodiagnóstico Empresarial de Madurez Digital</title>
+<<<<<<< HEAD
+    <title>ITACA - Autodiagnóstico de Madurez Digital | Corporación Universitaria Iberoamericana</title>
+    <meta name="description"
+        content="Sistema Inteligente de Autodiagnóstico Empresarial basado en IA. Evalúe el nivel de madurez digital de su empresa.">
+=======
+    <title>ITACA – Autodiagnóstico de Madurez Digital | Corporación Universitaria Iberoamericana</title>
+    <meta name="description"
+        content="Sistema Inteligente de Autodiagnóstico Empresarial (ITACA). Evaluación multimodal de madurez digital basada en Inteligencia Artificial (Red Híbrida TensorFlow + NLP SentenceTransformers).">
+>>>>>>> a803204d3deb8f9f905ece8a7ba3342953caf5e4
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <div class="background-decor font-blur"></div>
+<<<<<<< HEAD
+    <div class="background-decor"></div>
     <main class="container">
+
         <!-- Header -->
         <header class="header-card">
+            <!-- Logo Institucional -->
+            <div class="header-logo-area">
+                <img src="Logo-blanco_1.png.webp" alt="Corporación Universitaria Iberoamericana - SIAE"
+                    class="header-logo" loading="eager">
+            </div>
+
+            <!-- Badge de estado del motor IA -->
+=======
+    <!-- Decoración de fondo -->
+    <div class="background-decor" aria-hidden="true"></div>
+
+    <main class="container">
+
+        <!-- ── HEADER ─────────────────────────────────────────── -->
+        <header class="header-card">
+            <img
+                src="src/Logo-blanco_1.png.webp"
+                alt="Corporación Universitaria Iberoamericana"
+                class="institutional-logo"
+            >
+>>>>>>> a803204d3deb8f9f905ece8a7ba3342953caf5e4
             <div class="logo-badge">
-                <span class="pulse-dot"></span>
+                <span class="pulse-dot" aria-hidden="true"></span>
                 <span>ITACA AI Engine v2.0</span>
             </div>
+
             <h1>Autodiagnóstico de Madurez Digital</h1>
+<<<<<<< HEAD
+            <p class="header-subbrand">Corporación Universitaria Iberoamericana</p>
             <p>Evaluación multimodal basada en Inteligencia Artificial (Red Híbrida TensorFlow + NLP
                 SentenceTransformers)</p>
         </header>
 
         <!-- Banner de Alerta por Baja Confianza -->
-        <div id="avisoConfianza" class="alert-box"
-            style="display: none; padding: 10px; margin-top: 10px; border-radius: 5px;"></div>
+        <div id="avisoConfianza" class="alert-box" style="display: none;"></div>
+
         <!-- Contenedor de Errores Inline -->
-        <div id="mensajeError" style="display: none; padding: 10px; margin-top: 10px; font-weight: bold;"></div>
-        <!-- Nota Ética al pie del resultado -->
-        <p class="nota-etica" style="color: var(--dark-anthracite); font-size: 0.85rem; margin-top: 20px;">
+        <div id="mensajeError" class="error-box" style="display: none;"></div>
+
+        <!-- Nota Ética -->
+        <p class="nota-etica">
             <em>* Este diagnóstico es orientativo y no reemplaza una consultoría profesional.</em>
         </p>
 
+=======
+            <p class="header-desc">
+                Evaluación multimodal basada en Inteligencia Artificial
+                (Red Híbrida TensorFlow + NLP SentenceTransformers)
+            </p>
+        </header>
 
+        <!-- ── ALERTAS GLOBALES ───────────────────────────────── -->
+        <div id="avisoConfianza" class="alert-box" role="alert" aria-live="polite"></div>
+        <div id="mensajeError"   class="error-box" role="alert" aria-live="assertive"></div>
+
+        <!-- ── GRID PRINCIPAL ────────────────────────────────── -->
+>>>>>>> a803204d3deb8f9f905ece8a7ba3342953caf5e4
         <div class="grid-layout">
-            <!-- Form Card -->
-            <section class="card form-card">
-                <h2>📋 Datos de la Empresa</h2>
-                <form id="diagnosisForm">
+
+            <!-- ── FORMULARIO ──────────────────────────────────── -->
+            <section class="card form-card" aria-labelledby="formTitle">
+                <h2 id="formTitle">📋 Datos de la Empresa</h2>
+                <form id="diagnosisForm" novalidate>
+
                     <div class="form-group">
                         <label for="sector">Sector Económico</label>
                         <select id="sector" required>
@@ -49,7 +99,11 @@
                             <option value="Manufactura">Manufactura</option>
                             <option value="Retail">Retail</option>
                             <option value="Servicios">Servicios</option>
+                            <option value="Comercio">Comercio</option>
                             <option value="Salud">Salud</option>
+                            <option value="Comercio">Comercio</option>
+                            <option value="Educación">Educación</option>
+                            <option value="Construcción">Construcción</option>
                         </select>
                     </div>
 
@@ -57,14 +111,15 @@
                         <label for="tamano_empresa">Tamaño de la Empresa</label>
                         <select id="tamano_empresa" required>
                             <option value="" disabled selected>Seleccione el tamaño...</option>
-                            <option value="Micro">Micro (1-10 empleados)</option>
-                            <option value="Pequeña">Pequeña (11-50 empleados)</option>
-                            <option value="Mediana">Mediana (51-200 empleados)</option>
-                            <option value="Grande">Grande (>200 empleados)</option>
+                            <option value="Micro">Micro (1–10 empleados)</option>
+                            <option value="Pequeña">Pequeña (11–50 empleados)</option>
+                            <option value="Mediana">Mediana (51–200 empleados)</option>
+                            <option value="Grande">Grande (&gt;200 empleados)</option>
                         </select>
                     </div>
 
-                    <div class="demo-buttons-container" style="margin-bottom: 20px;">
+<<<<<<< HEAD
+                    <div class="demo-buttons-container">
                         <p><strong>Cargar Caso de Prueba Rápido:</strong></p>
                         <button type="button" class="btn-demo" onclick="cargarCasoDemo('inicial')">Caso 1:
                             Microempresa</button>
@@ -72,25 +127,55 @@
                             PyME</button>
                         <button type="button" class="btn-demo" onclick="cargarCasoDemo('optimizado')">Caso 3: Gran
                             Empresa</button>
+=======
+                    <!-- Casos de prueba rápidos -->
+                    <div class="demo-buttons-container">
+                        <p>Cargar Caso de Prueba Rápido:</p>
+                        <div class="demo-buttons-group">
+                            <button type="button" id="demo-inicial"
+                                class="btn-demo"
+                                onclick="cargarCasoDemo('inicial')">
+                                Caso 1: Microempresa
+                            </button>
+                            <button type="button" id="demo-intermedio"
+                                class="btn-demo"
+                                onclick="cargarCasoDemo('intermedio')">
+                                Caso 2: PyME
+                            </button>
+                            <button type="button" id="demo-optimizado"
+                                class="btn-demo"
+                                onclick="cargarCasoDemo('optimizado')">
+                                Caso 3: Gran Empresa
+                            </button>
+                        </div>
+>>>>>>> a803204d3deb8f9f905ece8a7ba3342953caf5e4
                     </div>
-
 
                     <div class="form-group">
                         <label for="porcentaje_procesos_documentados">
                             Procesos Documentados (%)
                             <span id="pctValue" class="badge">15%</span>
                         </label>
-                        <input type="range" id="porcentaje_procesos_documentados" min="0" max="100" value="15" step="1">
+                        <input type="range"
+                            id="porcentaje_procesos_documentados"
+                            min="0" max="100" value="15" step="1"
+                            aria-label="Porcentaje de procesos documentados">
                     </div>
 
                     <div class="form-group">
-                        <label for="presupuesto_anual_tecnología">Presupuesto Anual Tecnología (USD)</label>
-                        <input type="number" id="presupuesto_anual_tecnología" placeholder="Ej: 15000" min="0"
-                            step="1000" value="15000" required>
+                        <label for="presupuesto_anual_tecnología">
+                            Presupuesto Anual Tecnología (USD)
+                        </label>
+                        <input type="number"
+                            id="presupuesto_anual_tecnología"
+                            placeholder="Ej: 15000"
+                            min="0" step="1000" value="15000" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="respuesta_texto">Estado Cualitativo de Procesos (Texto Libre)</label>
+                        <label for="respuesta_texto">
+                            Estado Cualitativo de Procesos (Texto Libre)
+                        </label>
                         <textarea id="respuesta_texto" rows="4"
                             placeholder="Describa el nivel de automatización, herramientas usadas y metodología de trabajo..."
                             required>El trabajo es muy empírico, dependemos de registros en papel y hojas de cálculo desordenadas.</textarea>
@@ -98,25 +183,31 @@
 
                     <button type="submit" id="submitBtn" class="btn-primary">
                         <span class="btn-text">⚡ Generar Diagnóstico IA</span>
-                        <span class="spinner hidden"></span>
+                        <span class="spinner hidden" aria-hidden="true"></span>
                     </button>
+
                 </form>
             </section>
 
-            <!-- Results Card -->
-            <section class="card results-card" id="resultsSection">
+            <!-- ── RESULTADOS ──────────────────────────────────── -->
+            <section class="card results-card" id="resultsSection" aria-labelledby="resultsTitle">
+                <h2 id="resultsTitle">📊 Resultado del Diagnóstico</h2>
+
+                <!-- Estado vacío -->
                 <div class="empty-state" id="emptyState">
-                    <div class="icon">📊</div>
+                    <div class="icon" aria-hidden="true">🤖</div>
                     <h3>Esperando Evaluación</h3>
-                    <p>Complete el formulario y presione "Generar Diagnóstico IA" para obtener el dictamen del modelo
-                        híbrido.</p>
+                    <p>Complete el formulario y presione "Generar Diagnóstico IA" para obtener
+                        el dictamen del modelo híbrido.</p>
                 </div>
 
+                <!-- Contenido de resultados -->
                 <div class="results-content hidden" id="resultsContent">
+
                     <div class="result-badge-container">
                         <span class="label-title">Nivel de Madurez Evaluado</span>
                         <div class="level-badge" id="levelBadge">Inicial</div>
-                        <div class="confidence" id="confidenceScore">Confianza del modelo: 85.4%</div>
+                        <div class="confidence" id="confidenceScore">Confianza del modelo: —</div>
                     </div>
 
                     <div class="probabilities-section">
@@ -128,9 +219,17 @@
                         <h4>💡 Recomendación Estratégica Principal</h4>
                         <p id="recommendationText">Cargando recomendación...</p>
                     </div>
+
                 </div>
             </section>
-        </div>
+
+        </div><!-- /grid-layout -->
+
+        <!-- Nota ética -->
+        <p class="nota-etica">
+            * Este diagnóstico es orientativo y no reemplaza una consultoría profesional.
+        </p>
+
     </main>
 
     <script src="js/app.js"></script>
