@@ -8,6 +8,10 @@ services:
     container_name: itaca_api
     ports:
       - "8000:8000"
+    volumes:
+      - ../src:/app/src
+      - ../artifacts:/app/artifacts
+      - ../scripts:/app/scripts
     restart: always
 
   frontend:
@@ -17,6 +21,8 @@ services:
     container_name: itaca_frontend
     ports:
       - "80:80"
+    volumes:
+      - ../frontend:/usr/share/nginx/html
     depends_on:
       - api
     restart: always
