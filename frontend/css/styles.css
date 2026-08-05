@@ -1,42 +1,3 @@
-<<<<<<< HEAD
-:root {
-    /* ========================================
-       PALETA CORPORATIVA OFICIAL - ITACA
-       Corporación Universitaria Iberoamericana
-    ======================================== */
-    --color-primary:   #ED202D;   /* Rojo ITACA - acciones principales, alertas */
-    --color-secondary: #23C2E8;   /* Cian IA - elementos interactivos, badges */
-    --color-text:      #353638;   /* Antracita - fondos oscuros, sidebars */
-    --color-accent:    #FFD600;   /* Amarillo - alertas y recomendaciones */
-    --color-surface:   #F1F0EF;   /* Gris claro - superficies, inputs, texto en oscuro */
-
-    /* ========================================
-       TOKENS SEMÁNTICOS (derivados de paleta)
-    ======================================== */
-    --bg-body:         #1A1B1C;                    /* Fondo principal ultra-oscuro */
-    --bg-card:         rgba(53, 54, 56, 0.80);     /* Card glassmorphism */
-    --bg-card-inner:   rgba(26, 27, 28, 0.65);     /* Secciones internas */
-    --border-color:    rgba(241, 240, 239, 0.12);
-    --border-active:   var(--color-primary);
-    --text-main:       var(--color-surface);
-    --text-muted:      rgba(241, 240, 239, 0.55);
-    --primary:         var(--color-primary);
-    --accent:          var(--color-secondary);
-
-    /* Sombras */
-    --shadow-card:      0 20px 40px rgba(0, 0, 0, 0.45);
-    --shadow-glow-red:  0 0 24px rgba(237, 32, 45, 0.35);
-    --shadow-glow-cyan: 0 0 24px rgba(35, 194, 232, 0.30);
-
-    /* Tipografía */
-    --font-main: 'Outfit', sans-serif;
-}
-
-/* ==========================================
-   RESET & BASE
-========================================== */
-* {
-=======
 /* ============================================================
    SIAE / ITACA – Sistema de Autodiagnóstico Empresarial
    Hoja de estilos principal · Paleta Corporativa Oficial
@@ -77,6 +38,9 @@
     --primary: var(--color-primary);
     --accent: var(--color-secondary);
 
+    /* Tipografía */
+    --font-main: 'Outfit', sans-serif;
+
     /* Sombras */
     --shadow-card: 0 20px 40px -8px rgba(0, 0, 0, 0.5);
     --shadow-glow-red: 0 0 24px rgba(237, 32, 45, 0.35);
@@ -94,7 +58,6 @@
 *,
 *::before,
 *::after {
->>>>>>> a803204d3deb8f9f905ece8a7ba3342953caf5e4
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -114,69 +77,30 @@ body {
     overflow-x: hidden;
 }
 
-<<<<<<< HEAD
-/* ==========================================
-   DECORACIÓN DE FONDO (orbes de luz)
-========================================== */
-.background-decor {
-    position: fixed;
-    top: -15%;
-=======
 /* Orbe decorativo primario (rojo-cian) */
 .background-decor {
     position: fixed;
     top: -10%;
->>>>>>> a803204d3deb8f9f905ece8a7ba3342953caf5e4
     left: 50%;
     transform: translateX(-50%);
     width: 700px;
     height: 700px;
-<<<<<<< HEAD
-    background: radial-gradient(
-        ellipse at 30% 20%,
-        rgba(237, 32, 45, 0.18) 0%,
-        rgba(35, 194, 232, 0.12) 40%,
-        transparent 70%
-    );
-    filter: blur(80px);
-=======
     background: radial-gradient(ellipse at 35% 30%,
             rgba(237, 32, 45, 0.18) 0%,
             rgba(35, 194, 232, 0.12) 45%,
             transparent 70%);
     filter: blur(70px);
->>>>>>> a803204d3deb8f9f905ece8a7ba3342953caf5e4
     z-index: 0;
     pointer-events: none;
     animation: driftOrb 12s ease-in-out infinite alternate;
 }
 
-<<<<<<< HEAD
-/* Segundo orbe cyan para profundidad */
-=======
 /* Segundo orbe decorativo (acento amarillo) */
->>>>>>> a803204d3deb8f9f905ece8a7ba3342953caf5e4
 .background-decor::after {
     content: '';
     position: absolute;
     bottom: -30%;
     right: -20%;
-<<<<<<< HEAD
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(
-        ellipse at center,
-        rgba(35, 194, 232, 0.10) 0%,
-        rgba(255, 214, 0, 0.05) 50%,
-        transparent 70%
-    );
-    filter: blur(70px);
-}
-
-/* ==========================================
-   CONTENEDOR PRINCIPAL
-========================================== */
-=======
     width: 400px;
     height: 400px;
     background: radial-gradient(circle,
@@ -197,7 +121,6 @@ body {
 }
 
 /* ── 4. CONTENEDOR PRINCIPAL ───────────────────────────────── */
->>>>>>> a803204d3deb8f9f905ece8a7ba3342953caf5e4
 .container {
     width: 100%;
     max-width: 1100px;
@@ -205,13 +128,7 @@ body {
     position: relative;
 }
 
-<<<<<<< HEAD
-/* ==========================================
-   HEADER
-========================================== */
-=======
 /* ── 5. HEADER ─────────────────────────────────────────────── */
->>>>>>> a803204d3deb8f9f905ece8a7ba3342953caf5e4
 .header-card {
     text-align: center;
     margin-bottom: 2rem;
@@ -235,41 +152,11 @@ body {
     opacity: 1;
 }
 
-/* Área del logo institucional */
-.header-logo-area {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1.25rem;
-}
-
-.header-logo {
-    height: 54px;
-    width: auto;
-    object-fit: contain;
-    filter: drop-shadow(0 2px 12px rgba(35, 194, 232, 0.25));
-    transition: filter 0.3s ease;
-}
-
-.header-logo:hover {
-    filter: drop-shadow(0 2px 20px rgba(35, 194, 232, 0.45));
-}
-
 /* Badge de estado del motor IA */
 .logo-badge {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-<<<<<<< HEAD
-    padding: 6px 14px;
-    background: rgba(35, 194, 232, 0.08);
-    border: 1px solid rgba(35, 194, 232, 0.40);
-    border-radius: 20px;
-    font-size: 0.82rem;
-    color: var(--color-secondary);
-    margin-bottom: 0.85rem;
-    letter-spacing: 0.3px;
-=======
     padding: 6px 16px;
     background: rgba(35, 194, 232, 0.10);
     border: 1px solid rgba(35, 194, 232, 0.40);
@@ -280,7 +167,6 @@ body {
     margin-bottom: 0.85rem;
     letter-spacing: 0.3px;
     transition: box-shadow var(--transition);
->>>>>>> a803204d3deb8f9f905ece8a7ba3342953caf5e4
 }
 
 .logo-badge:hover {
@@ -293,22 +179,12 @@ body {
     height: 8px;
     background-color: #22c55e;
     border-radius: 50%;
-<<<<<<< HEAD
-    box-shadow: 0 0 8px #10b981;
-    animation: pulse 2s infinite;
-=======
     box-shadow: 0 0 8px #22c55e;
     animation: pulse 2s ease-in-out infinite;
->>>>>>> a803204d3deb8f9f905ece8a7ba3342953caf5e4
     flex-shrink: 0;
 }
 
 @keyframes pulse {
-<<<<<<< HEAD
-    0%   { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-    70%  { transform: scale(1);    box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
-    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);  }
-=======
     0% {
         transform: scale(0.95);
         box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
@@ -323,48 +199,20 @@ body {
         transform: scale(0.95);
         box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
     }
->>>>>>> a803204d3deb8f9f905ece8a7ba3342953caf5e4
 }
 
 h1 {
     font-size: 2.4rem;
     font-weight: 700;
-<<<<<<< HEAD
-=======
     line-height: 1.15;
->>>>>>> a803204d3deb8f9f905ece8a7ba3342953caf5e4
     background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-secondary) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-<<<<<<< HEAD
-    margin-bottom: 0.4rem;
-}
-
-.header-subbrand {
-    font-size: 0.78rem;
-    color: var(--text-muted);
-    letter-spacing: 0.5px;
-=======
->>>>>>> a803204d3deb8f9f905ece8a7ba3342953caf5e4
     margin-bottom: 0.5rem;
     text-transform: uppercase;
 }
 
-.header-sub {
-    font-size: 0.78rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: rgba(237, 32, 45, 0.80);
-    margin-bottom: 0.4rem;
-}
-
-<<<<<<< HEAD
-/* ==========================================
-   GRID LAYOUT
-========================================== */
-=======
 .header-desc {
     color: var(--text-muted);
     font-size: 0.92rem;
@@ -423,7 +271,6 @@ h1 {
 }
 
 /* ── 7. LAYOUT ─────────────────────────────────────────────── */
->>>>>>> a803204d3deb8f9f905ece8a7ba3342953caf5e4
 .grid-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -434,15 +281,6 @@ h1 {
     .grid-layout {
         grid-template-columns: 1fr;
     }
-<<<<<<< HEAD
-    h1 { font-size: 1.7rem; }
-    .header-logo { height: 42px; }
-}
-
-/* ==========================================
-   CARDS
-========================================== */
-=======
 
     h1 {
         font-size: 1.8rem;
@@ -450,7 +288,6 @@ h1 {
 }
 
 /* ── 8. CARDS ──────────────────────────────────────────────── */
->>>>>>> a803204d3deb8f9f905ece8a7ba3342953caf5e4
 .card {
     background: var(--bg-card);
     backdrop-filter: blur(14px);
@@ -459,25 +296,6 @@ h1 {
     border-radius: var(--radius-card);
     padding: 1.75rem;
     box-shadow: var(--shadow-card);
-<<<<<<< HEAD
-    transition: border-color 0.3s;
-}
-
-.card:hover {
-    border-color: rgba(241, 240, 239, 0.20);
-}
-
-h2 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 1.25rem;
-    color: var(--color-surface);
-}
-
-/* ==========================================
-   FORMULARIO
-========================================== */
-=======
     transition: border-color var(--transition);
 }
 
@@ -496,7 +314,6 @@ h2 {
 }
 
 /* ── 9. FORMULARIO ─────────────────────────────────────────── */
->>>>>>> a803204d3deb8f9f905ece8a7ba3342953caf5e4
 .form-group {
     margin-bottom: 1.35rem;
 }
@@ -505,60 +322,40 @@ label {
     display: flex;
     justify-content: space-between;
     align-items: center;
-<<<<<<< HEAD
-    font-size: 0.875rem;
-    color: rgba(241, 240, 239, 0.75);
-    margin-bottom: 0.4rem;
-=======
     font-size: 0.845rem;
     color: rgba(241, 240, 239, 0.75);
     margin-bottom: 0.45rem;
->>>>>>> a803204d3deb8f9f905ece8a7ba3342953caf5e4
     font-weight: 500;
 }
 
 .badge {
-<<<<<<< HEAD
-    background: rgba(35, 194, 232, 0.20);
-=======
     background: rgba(35, 194, 232, 0.18);
->>>>>>> a803204d3deb8f9f905ece8a7ba3342953caf5e4
     color: var(--color-secondary);
     padding: 2px 9px;
     border-radius: 6px;
     font-size: 0.75rem;
     font-weight: 600;
-<<<<<<< HEAD
-=======
     font-variant-numeric: tabular-nums;
->>>>>>> a803204d3deb8f9f905ece8a7ba3342953caf5e4
 }
 
 input,
 select,
 textarea {
     width: 100%;
-<<<<<<< HEAD
-    padding: 0.75rem;
-=======
     padding: 0.72rem 0.9rem;
->>>>>>> a803204d3deb8f9f905ece8a7ba3342953caf5e4
     background: var(--bg-card-inner);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-input);
     color: var(--text-main);
     font-size: 0.9rem;
-<<<<<<< HEAD
-    transition: border-color 0.2s, box-shadow 0.2s;
+    transition: border-color var(--transition), box-shadow var(--transition);
+    appearance: none;
+    -webkit-appearance: none;
 }
 
 input::placeholder,
 textarea::placeholder {
     color: var(--text-muted);
-=======
-    transition: border-color var(--transition), box-shadow var(--transition);
-    appearance: none;
-    -webkit-appearance: none;
 }
 
 select {
@@ -578,7 +375,6 @@ textarea {
     resize: vertical;
     min-height: 100px;
     line-height: 1.5;
->>>>>>> a803204d3deb8f9f905ece8a7ba3342953caf5e4
 }
 
 input:focus,
@@ -586,22 +382,6 @@ select:focus,
 textarea:focus {
     outline: none;
     border-color: var(--color-secondary);
-<<<<<<< HEAD
-    box-shadow: 0 0 0 3px rgba(35, 194, 232, 0.12);
-}
-
-select option {
-    background: #1A1B1C;
-    color: var(--color-surface);
-}
-
-input[type="range"] {
-    accent-color: var(--color-primary);
-    cursor: pointer;
-    background: transparent;
-    border: none;
-    padding: 0;
-=======
     box-shadow: 0 0 0 3px rgba(35, 194, 232, 0.15);
 }
 
@@ -614,7 +394,6 @@ input[type="range"] {
     border: none;
     border-radius: 4px;
     box-shadow: none;
->>>>>>> a803204d3deb8f9f905ece8a7ba3342953caf5e4
 }
 
 input[type="range"]:focus {
@@ -622,93 +401,6 @@ input[type="range"]:focus {
     border-color: transparent;
 }
 
-<<<<<<< HEAD
-/* ==========================================
-   BOTONES DEMO (Caso 1/2/3)
-========================================== */
-.demo-buttons-container {
-    margin-bottom: 1.25rem;
-}
-
-.demo-buttons-container p {
-    color: rgba(241, 240, 239, 0.65);
-    font-size: 0.82rem;
-    margin-bottom: 0.6rem;
-}
-
-.btn-demo {
-    display: inline-block;
-    margin: 4px 4px 4px 0;
-    padding: 6px 14px;
-    border: 1px solid rgba(35, 194, 232, 0.40);
-    background: rgba(35, 194, 232, 0.08);
-    color: var(--color-secondary);
-    border-radius: 8px;
-    font-size: 0.82rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
-}
-
-.btn-demo:hover {
-    background: rgba(35, 194, 232, 0.18);
-    box-shadow: var(--shadow-glow-cyan);
-    transform: translateY(-1px);
-}
-
-.btn-demo:active {
-    transform: translateY(0);
-}
-
-/* ==========================================
-   BOTÓN PRIMARIO - Generar Diagnóstico
-========================================== */
-.btn-primary {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-    padding: 0.9rem;
-    background: linear-gradient(135deg, var(--color-primary) 0%, #C41020 100%);
-    border: none;
-    border-radius: 10px;
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 700;
-    cursor: pointer;
-    box-shadow: var(--shadow-glow-red);
-    transition: transform 0.2s, box-shadow 0.2s;
-    letter-spacing: 0.3px;
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 32px rgba(237, 32, 45, 0.52);
-}
-
-.btn-primary:active {
-    transform: scale(0.98);
-}
-
-.btn-primary:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-    transform: none;
-}
-
-/* ==========================================
-   SPINNER DE CARGA
-========================================== */
-.spinner {
-    width: 18px;
-    height: 18px;
-    border: 2px solid rgba(255, 255, 255, 0.35);
-    border-top-color: #ffffff;
-    border-radius: 50%;
-    animation: spin 0.7s linear infinite;
-    display: inline-block;
-=======
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     opacity: 0.5;
@@ -804,39 +496,28 @@ input[type="number"]::-webkit-outer-spin-button {
     border-top-color: #ffffff;
     border-radius: 50%;
     animation: spin 0.65s linear infinite;
->>>>>>> a803204d3deb8f9f905ece8a7ba3342953caf5e4
     flex-shrink: 0;
 }
 
 @keyframes spin {
-<<<<<<< HEAD
-    to { transform: rotate(360deg); }
-}
-
-/* ==========================================
-   EMPTY STATE (resultados sin datos)
-========================================== */
-.hidden {
-    display: none !important;
-=======
     to {
         transform: rotate(360deg);
     }
+}
+
+/* Utilidad para ocultar elementos (spinner, estados vacíos/con datos) */
+.hidden {
+    display: none !important;
 }
 
 /* ── 12. TARJETA DE RESULTADOS ─────────────────────────────── */
 .results-card {
     display: flex;
     flex-direction: column;
->>>>>>> a803204d3deb8f9f905ece8a7ba3342953caf5e4
 }
 
 .empty-state {
     text-align: center;
-<<<<<<< HEAD
-    padding: 3rem 1rem;
-    color: var(--text-muted);
-=======
     padding: 3.5rem 1.5rem;
     flex: 1;
     display: flex;
@@ -862,23 +543,8 @@ input[type="number"]::-webkit-outer-spin-button {
     font-size: 0.88rem;
     max-width: 280px;
     line-height: 1.5;
->>>>>>> a803204d3deb8f9f905ece8a7ba3342953caf5e4
 }
 
-.empty-state .icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.empty-state h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-    color: var(--color-surface);
-}
-
-/* ==========================================
-   RESULTADOS
-========================================== */
 .results-content {
     display: flex;
     flex-direction: column;
@@ -890,11 +556,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .result-badge-container {
     text-align: center;
     background: var(--bg-card-inner);
-<<<<<<< HEAD
-    padding: 1.25rem;
-=======
     padding: 1.4rem 1.25rem;
->>>>>>> a803204d3deb8f9f905ece8a7ba3342953caf5e4
     border-radius: 12px;
     border: 1px solid var(--border-color);
     position: relative;
@@ -912,11 +574,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .label-title {
-<<<<<<< HEAD
-    font-size: 0.78rem;
-=======
     font-size: 0.75rem;
->>>>>>> a803204d3deb8f9f905ece8a7ba3342953caf5e4
     text-transform: uppercase;
     letter-spacing: 1.2px;
     color: var(--text-muted);
@@ -926,66 +584,46 @@ input[type="number"]::-webkit-outer-spin-button {
 .level-badge {
     font-size: 1.9rem;
     font-weight: 700;
-<<<<<<< HEAD
-    margin: 0.4rem 0;
-    color: #ffffff;
-    transition: color 0.4s;
-=======
     margin: 0.5rem 0 0.3rem;
     color: var(--color-surface);
     transition: color var(--transition);
 }
 
-/* Colores dinámicos por nivel de madurez */
+/* Colores dinámicos por nivel de madurez (4 clases reales del modelo) */
 .level-badge[data-level="Inicial"] {
     color: var(--color-primary);
     text-shadow: 0 0 20px rgba(237, 32, 45, 0.4);
 }
 
-.level-badge[data-level="Intermedio"] {
+.level-badge[data-level="En Desarrollo"] {
     color: var(--color-accent);
     text-shadow: 0 0 20px rgba(255, 214, 0, 0.4);
 }
 
-.level-badge[data-level="Optimizado"] {
+.level-badge[data-level="Definido"] {
     color: var(--color-secondary);
     text-shadow: 0 0 20px rgba(35, 194, 232, 0.4);
->>>>>>> a803204d3deb8f9f905ece8a7ba3342953caf5e4
 }
 
-/* Colores dinámicos por nivel */
-.level-badge.nivel-inicial      { color: var(--color-primary);   text-shadow: 0 0 20px rgba(237,32,45,0.4);   }
-.level-badge.nivel-en-desarrollo{ color: var(--color-accent);    text-shadow: 0 0 20px rgba(255,214,0,0.4);   }
-.level-badge.nivel-definido     { color: var(--color-secondary); text-shadow: 0 0 20px rgba(35,194,232,0.4);  }
-.level-badge.nivel-optimizado   { color: #10b981;                text-shadow: 0 0 20px rgba(16,185,129,0.4);  }
+.level-badge[data-level="Optimizado"] {
+    color: #10b981;
+    text-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+}
 
 .confidence {
-<<<<<<< HEAD
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    margin-top: 0.2rem;
-=======
     font-size: 0.82rem;
     color: var(--text-muted);
     font-variant-numeric: tabular-nums;
->>>>>>> a803204d3deb8f9f905ece8a7ba3342953caf5e4
 }
 
 /* Barras de probabilidad */
 .probabilities-section h4 {
-<<<<<<< HEAD
-    font-size: 0.88rem;
-    color: var(--color-surface);
-    margin-bottom: 0.75rem;
-    font-weight: 600;
-=======
     font-size: 0.82rem;
     text-transform: uppercase;
     letter-spacing: 0.8px;
     color: var(--text-muted);
     font-weight: 600;
     margin-bottom: 0.75rem;
->>>>>>> a803204d3deb8f9f905ece8a7ba3342953caf5e4
 }
 
 .prob-bars {
@@ -1003,25 +641,15 @@ input[type="number"]::-webkit-outer-spin-button {
 .prob-label {
     display: flex;
     justify-content: space-between;
-<<<<<<< HEAD
-    font-size: 0.8rem;
-    color: rgba(241, 240, 239, 0.75);
-=======
     font-size: 0.80rem;
     color: rgba(241, 240, 239, 0.75);
     font-weight: 500;
->>>>>>> a803204d3deb8f9f905ece8a7ba3342953caf5e4
 }
 
 .bar-bg {
     width: 100%;
-<<<<<<< HEAD
-    height: 8px;
-    background: rgba(255, 255, 255, 0.08);
-=======
     height: 6px;
     background: rgba(241, 240, 239, 0.08);
->>>>>>> a803204d3deb8f9f905ece8a7ba3342953caf5e4
     border-radius: 4px;
     overflow: hidden;
 }
@@ -1030,65 +658,6 @@ input[type="number"]::-webkit-outer-spin-button {
     height: 100%;
     background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%);
     border-radius: 4px;
-<<<<<<< HEAD
-    transition: width 0.65s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Caja de recomendación - amarillo corporativo */
-.recommendation-box {
-    background: rgba(255, 214, 0, 0.07);
-    border: 1px solid rgba(255, 214, 0, 0.32);
-    padding: 1rem 1.1rem;
-    border-radius: 10px;
-}
-
-.recommendation-box h4 {
-    font-size: 0.9rem;
-    color: var(--color-accent);
-    margin-bottom: 0.45rem;
-    font-weight: 600;
-}
-
-.recommendation-box p {
-    font-size: 0.875rem;
-    color: rgba(241, 240, 239, 0.85);
-    line-height: 1.5;
-}
-
-/* ==========================================
-   ALERTAS Y MENSAJES
-========================================== */
-.alert-box {
-    padding: 0.75rem 1rem;
-    border-radius: 8px;
-    background: rgba(255, 214, 0, 0.12);
-    border: 1px solid var(--color-accent);
-    color: var(--color-accent);
-    font-size: 0.88rem;
-    font-weight: 500;
-    margin-top: 0.75rem;
-}
-
-.error-box {
-    color: var(--color-primary);
-    background: rgba(237, 32, 45, 0.10);
-    border: 1px solid rgba(237, 32, 45, 0.32);
-    border-radius: 8px;
-    padding: 0.75rem 1rem;
-    font-size: 0.88rem;
-    font-weight: 500;
-    margin-top: 0.75rem;
-}
-
-/* ==========================================
-   NOTA ÉTICA
-========================================== */
-.nota-etica {
-    color: var(--text-muted);
-    font-size: 0.82rem;
-    text-align: center;
-    margin-top: 1.5rem;
-=======
     transition: width 0.7s cubic-bezier(0.4, 0, 0.2, 1);
     min-width: 2px;
 }
@@ -1126,5 +695,4 @@ input[type="number"]::-webkit-outer-spin-button {
     font-size: 0.875rem;
     color: rgba(241, 240, 239, 0.85);
     line-height: 1.55;
->>>>>>> a803204d3deb8f9f905ece8a7ba3342953caf5e4
 }
