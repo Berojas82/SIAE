@@ -41,6 +41,35 @@ function ocultarMensajes() {
     mensajeError.textContent     = '';
 }
 
+/* ── DASHBOARD COMPARATIVO ───────────────────────────────────── */
+
+const API_BASE = 'http://localhost:8000';
+
+let statsSectoriales = null;   // Respuesta cacheada de /stats/sectores
+let sectorSeleccionado = null; // Sector elegido en el formulario
+let nivelPredicho = null;      // Nivel devuelto por el último diagnóstico
+
+/** Redibuja ambas gráficas con el estado actual de selección. */
+function actualizarGraficas() {
+    if (!statsSectoriales || !statsSectoriales.disponible) return;
+
+    renderDistribucionSectores('chartDistribucion', statsSectoriales, sectorSeleccionado);
+    renderComparativaSector('chartComparativa', statsSectoriales, sectorSeleccionado, nivelPredicho);
+
+    const titulo = document.getElementById('chartComparativaTitle');
+    if (titulo) {
+        titulo.textContent = sectorSeleccionado
+            ? `${sectorSeleccionado} frente al promedio general`
+            : 'Su sector frente al promedio general';
+    }
+}
+
+/** Registra el sector elegido y refresca el dashboard. */
+function seleccionarSector(sector) {
+    sectorSeleccionado = sector || null;
+    actualizarGraficas();
+}
+
 /**
  * Carga un caso de demostración en el formulario.
  * Definida en scope global para que los botones onclick del HTML puedan accederla.
@@ -62,6 +91,11 @@ function cargarCasoDemo(nombreCaso) {
 
     // Limpiar mensajes anteriores al cargar un demo
     ocultarMensajes();
+
+    // El caso demo cambia el sector por asignación directa, que no dispara
+    // el evento 'change' del <select>; hay que refrescar el dashboard a mano.
+    nivelPredicho = null;
+    seleccionarSector(c.sector);
 }
 
 /* ── LÓGICA PRINCIPAL (DOMContentLoaded) ─────────────────────── */
@@ -103,6 +137,41 @@ document.addEventListener('DOMContentLoaded', () => {
         pctValue.textContent = `${e.target.value}%`;
     });
 
+    /* ── Dashboard: cargar referencia y reaccionar al sector ───── */
+    document.getElementById('sector').addEventListener('change', (e) => {
+        nivelPredicho = null;
+        seleccionarSector(e.target.value);
+    });
+
+    (async function cargarStatsSectoriales() {
+        const contDist = document.getElementById('chartDistribucion');
+        try {
+            const res = await fetch(`${API_BASE}/stats/sectores`);
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+            statsSectoriales = await res.json();
+
+            if (!statsSectoriales.disponible) {
+                contDist.innerHTML =
+                    '<p class="chart-empty">El dataset de referencia no está disponible en el servidor.</p>';
+                return;
+            }
+
+            const desc = document.getElementById('dashboardDesc');
+            if (desc) {
+                desc.textContent =
+                    `Distribución de la madurez digital en ${statsSectoriales.total_empresas} ` +
+                    `empresas de referencia, agrupadas en ${statsSectoriales.sectores.length} sectores.`;
+            }
+
+            seleccionarSector(document.getElementById('sector').value || null);
+        } catch (err) {
+            contDist.innerHTML =
+                '<p class="chart-empty">No se pudieron cargar los datos de referencia. ' +
+                'Verifique que la API esté activa.</p>';
+        }
+    })();
+
     /* ── Envío del formulario ──────────────────────────────────── */
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -131,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setLoadingState(true);
 
         try {
-            const response = await fetch('http://localhost:8000/predict', {
+            const response = await fetch(`${API_BASE}/predict`, {
                 method:  'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body:    JSON.stringify(payload)
@@ -169,6 +238,10 @@ document.addEventListener('DOMContentLoaded', () => {
         levelBadge.dataset.level         = nivel_madurez;  // Para el CSS data-level dinámico
         confidenceScore.textContent      = `Confianza del modelo: ${(confidence_score * 100).toFixed(1)}%`;
         recommendationText.textContent   = recomendacion_principal;
+
+        /* Situar el diagnóstico dentro del dashboard comparativo */
+        nivelPredicho = nivel_madurez;
+        seleccionarSector(document.getElementById('sector').value);
 
         /* Alerta por baja confianza */
         if (confidence_score < UMBRAL_CONFIANZA) {

@@ -34,6 +34,47 @@ class PredictionRequest(BaseModel):
         json_schema_extra={"example": "El trabajo es muy empírico, no hay documentación de lo que hacemos."}
     )
 
+class SectorStatsResponse(BaseModel):
+    """Estadísticas agregadas del dataset de referencia para el dashboard comparativo."""
+    disponible: bool = Field(..., json_schema_extra={"example": True})
+    total_empresas: int = Field(..., json_schema_extra={"example": 3000})
+    sectores: List[str] = Field(
+        ...,
+        json_schema_extra={"example": ["Manufactura", "Retail", "Servicios", "Tecnología"]}
+    )
+    clases: List[str] = Field(
+        ...,
+        json_schema_extra={"example": ["Inicial", "En Desarrollo", "Definido", "Optimizado"]}
+    )
+    distribucion: Dict[str, Dict[str, int]] = Field(
+        ...,
+        json_schema_extra={
+            "example": {
+                "Manufactura": {
+                    "Inicial": 192, "En Desarrollo": 241, "Definido": 236, "Optimizado": 86
+                }
+            }
+        }
+    )
+    distribucion_pct: Dict[str, Dict[str, float]] = Field(
+        ...,
+        json_schema_extra={
+            "example": {
+                "Manufactura": {
+                    "Inicial": 25.43, "En Desarrollo": 31.92, "Definido": 31.26, "Optimizado": 11.39
+                }
+            }
+        }
+    )
+    presupuesto_mediano: Dict[str, float] = Field(
+        ...,
+        json_schema_extra={"example": {"Manufactura": 40000000.0}}
+    )
+    total_por_sector: Dict[str, int] = Field(
+        ...,
+        json_schema_extra={"example": {"Manufactura": 755}}
+    )
+
 class PredictionResponse(BaseModel):
     status: str = Field(..., json_schema_extra={"example": "SUCCESS"})
     nivel_madurez: str = Field(..., json_schema_extra={"example": "Inicial"})
