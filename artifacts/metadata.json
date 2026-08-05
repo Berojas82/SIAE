@@ -6,7 +6,7 @@
         "Inicial",
         "Optimizado"
     ],
-    "tabular_input_dim": 10,
+    "tabular_input_dim": 9,
     "text_input_dim": 384,
     "metrics": {
         "global_metrics": {
@@ -14,28 +14,28 @@
             "f1_macro": 1.0,
             "confusion_matrix": [
                 [
-                    137,
+                    91,
                     0,
                     0,
                     0
                 ],
                 [
                     0,
-                    139,
+                    93,
                     0,
                     0
                 ],
                 [
                     0,
                     0,
-                    117,
+                    78,
                     0
                 ],
                 [
                     0,
                     0,
                     0,
-                    57
+                    38
                 ]
             ],
             "classification_report": {
@@ -43,38 +43,38 @@
                     "precision": 1.0,
                     "recall": 1.0,
                     "f1-score": 1.0,
-                    "support": 137.0
+                    "support": 91.0
                 },
                 "En Desarrollo": {
                     "precision": 1.0,
                     "recall": 1.0,
                     "f1-score": 1.0,
-                    "support": 139.0
+                    "support": 93.0
                 },
                 "Inicial": {
                     "precision": 1.0,
                     "recall": 1.0,
                     "f1-score": 1.0,
-                    "support": 117.0
+                    "support": 78.0
                 },
                 "Optimizado": {
                     "precision": 1.0,
                     "recall": 1.0,
                     "f1-score": 1.0,
-                    "support": 57.0
+                    "support": 38.0
                 },
                 "accuracy": 1.0,
                 "macro avg": {
                     "precision": 1.0,
                     "recall": 1.0,
                     "f1-score": 1.0,
-                    "support": 450.0
+                    "support": 300.0
                 },
                 "weighted avg": {
                     "precision": 1.0,
                     "recall": 1.0,
                     "f1-score": 1.0,
-                    "support": 450.0
+                    "support": 300.0
                 }
             }
         },

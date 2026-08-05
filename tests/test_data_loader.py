@@ -17,10 +17,10 @@ def test_data_loader_split():
     assert len(val_df) > 0
     assert len(test_df) > 0
 
-    # Proporción aproximada 70/15/15
-    assert abs((len(train_df) / total_len) - 0.70) < 0.02
-    assert abs((len(val_df) / total_len) - 0.15) < 0.02
-    assert abs((len(test_df) / total_len) - 0.15) < 0.02
+    # Proporción aproximada 80/10/10
+    assert abs((len(train_df) / total_len) - 0.80) < 0.02
+    assert abs((len(val_df) / total_len) - 0.10) < 0.02
+    assert abs((len(test_df) / total_len) - 0.10) < 0.02
 
 def test_data_splitter():
     df = pd.DataFrame({
@@ -35,8 +35,8 @@ def test_data_splitter():
     splitter = DataSplitter()
     X_tab, X_text, y = splitter.split_features_and_target(df)
 
-    assert X_tab.shape == (2, 4)
+    assert X_tab.shape == (2, 3)
     assert len(X_text) == 2
     assert len(y) == 2
     assert "sector" in X_tab.columns
-    assert "porcentaje_procesos_documentados" in X_tab.columns
+    assert "presupuesto_anual_tecnología" in X_tab.columns

@@ -16,8 +16,8 @@ TABULAR_PREPROCESSOR_PATH = ARTIFACTS_DIR / "tabular_preprocessor.joblib"
 LABEL_ENCODER_PATH = ARTIFACTS_DIR / "label_encoder.joblib"
 METADATA_PATH = ARTIFACTS_DIR / "metadata.json"
 
-# Columnas del Dataset
-NUMERICAL_COLS = ["porcentaje_procesos_documentados", "presupuesto_anual_tecnología"]
+# Columnas del Dataset (Se excluye porcentaje_procesos_documentados por fuga de etiqueta determinista)
+NUMERICAL_COLS = ["presupuesto_anual_tecnología"]
 CATEGORICAL_COLS = ["sector", "tamano_empresa"]
 TEXT_COL = "respuesta_texto"
 TARGET_COL = "nivel_madurez"

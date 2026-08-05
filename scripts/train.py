@@ -37,7 +37,7 @@ logger = get_logger("TrainScript")
 
 def main():
     logger.info("=" * 70)
-    logger.info("🚀 INICIANDO ENTRENAMIENTO DEL MODELO HÍBRIDO ITACA")
+    logger.info("INICIANDO ENTRENAMIENTO DEL MODELO HÍBRIDO ITACA")
     logger.info("=" * 70)
 
     # 1. Cargar y particionar datos (70% Train, 15% Val, 15% Test)
@@ -132,7 +132,7 @@ def main():
     with open(METADATA_PATH, "w", encoding="utf-8") as f:
         json.dump(metadata, f, indent=4, ensure_ascii=False)
 
-    logger.info("🎉 ¡ENTRENAMIENTO Y ARTEFACTOS PROCESADOS EXITOSAMENTE!")
+    logger.info("¡ENTRENAMIENTO Y ARTEFACTOS PROCESADOS EXITOSAMENTE!")
 
 if __name__ == "__main__":
     main()
