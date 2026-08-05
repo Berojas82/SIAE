@@ -151,8 +151,14 @@ function renderComparativaSector(contenedorId, stats, sector, nivelPredicho = nu
     const clases = stats.clases || [];
     const pctSector = (stats.distribucion_pct || {})[sector];
 
-    if (!sector || !pctSector) {
+    if (!sector) {
         cont.innerHTML = '<p class="chart-empty">Seleccione un sector para ver la comparativa.</p>';
+        return;
+    }
+
+    if (!pctSector) {
+        cont.innerHTML = `<p class="chart-empty">No hay datos de referencia para el sector
+            &quot;${esc(sector)}&quot; en la muestra actual.</p>`;
         return;
     }
 

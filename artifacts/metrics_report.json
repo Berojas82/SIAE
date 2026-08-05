@@ -1,0 +1,82 @@
+{
+    "version": "2.0.0",
+    "fecha_entrenamiento": "2026-08-04T22:58:58",
+    "accuracy": 1.0,
+    "f1_macro": 1.0,
+    "fairness_audit": {
+        "f1_by_sector": {
+            "Manufactura": 1.0,
+            "Retail": 1.0,
+            "Servicios": 1.0,
+            "Tecnología": 1.0
+        },
+        "max_delta": 0.0,
+        "fairness_passed": true,
+        "tolerance_threshold": 0.05
+    },
+    "confusion_matrix": [
+        [
+            91,
+            0,
+            0,
+            0
+        ],
+        [
+            0,
+            93,
+            0,
+            0
+        ],
+        [
+            0,
+            0,
+            78,
+            0
+        ],
+        [
+            0,
+            0,
+            0,
+            38
+        ]
+    ],
+    "classification_report": {
+        "Definido": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 91.0
+        },
+        "En Desarrollo": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 93.0
+        },
+        "Inicial": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 78.0
+        },
+        "Optimizado": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 38.0
+        },
+        "accuracy": 1.0,
+        "macro avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 300.0
+        },
+        "weighted avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 300.0
+        }
+    }
+}
