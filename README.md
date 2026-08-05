@@ -1,15 +1,11 @@
-<<<<<<< Updated upstream
-# SIAE
-Sistema Inteligente de Autodiagnóstico Empresarial mediante IA para ITACA
-=======
 # SIAE - Sistema Inteligente de Autodiagnóstico Empresarial (Proyecto ITACA)
 
 Motor de IA multimodal híbrido (TensorFlow/Keras + SentenceTransformers) para el autodiagnóstico empresarial de madurez digital.
 
 ## Estructura del Repositorio
 
-- `src/`: Código fuente  principal (cargador de datos, preprocesamiento multimodal, modelo híbrido, evaluador y API REST).
-- `scripts/`: Scripts CLI para entrenamiento (`train.py`), evaluación (`evaluate.py`), inferencia CLI (`predict.py`) y servidor web (`serve.py`).
+- `src/`: Código fuente principal (cargador de datos, preprocesamiento multimodal, modelo híbrido, evaluador y API REST).
+- `scripts/`: Scripts CLI para entrenamiento (`train.py`), evaluación (`evaluate.py`), inferencia CLI (`predict.py`), servidor web (`serve.py`), diagnóstico de fuga (`diagnostico_fuga.py`), ablación solo texto (`ablacion_solo_texto.py`) y medición de latencia (`medir_latencia.py`).
 - `notebooks/`: Notebooks de análisis y preparación (`01_EDA.ipynb`, `02_Preprocesamiento_de_datos.ipynb`, `03_Procesamiento_y_preparación_de_datos.ipynb`, `04_evaluation.ipynb`).
 - `frontend/`: Cliente Web interactivo (HTML5/CSS3/JS vanilla con diseño glassmorphism).
 - `docker/`: Dockerfiles y `docker-compose.yml` para orquestación de servicios (API y Frontend).
@@ -58,4 +54,3 @@ docker-compose up --build
 ```
 - API REST: `http://localhost:8000`
 - Frontend Web: `http://localhost:80`
->>>>>>> Stashed changes
