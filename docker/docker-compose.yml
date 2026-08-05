@@ -8,6 +8,10 @@ services:
     container_name: itaca_api
     ports:
       - "8000:8000"
+    volumes:
+      - ../src:/app/src
+      - ../artifacts:/app/artifacts
+      - ../scripts:/app/scripts
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
       interval: 10s
@@ -23,6 +27,8 @@ services:
     container_name: itaca_frontend
     ports:
       - "80:80"
+    volumes:
+      - ../frontend:/usr/share/nginx/html
     depends_on:
       api:
         condition: service_healthy
