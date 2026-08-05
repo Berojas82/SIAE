@@ -12,6 +12,8 @@ services:
       - ../src:/app/src
       - ../artifacts:/app/artifacts
       - ../scripts:/app/scripts
+      # Dataset de referencia para el dashboard comparativo (/stats/sectores)
+      - ../data:/app/data:ro
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
       interval: 10s

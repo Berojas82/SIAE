@@ -6,6 +6,12 @@
       "runtimeExecutable": "python",
       "runtimeArgs": ["-m", "http.server", "5500", "--directory", "frontend"],
       "port": 5500
+    },
+    {
+      "name": "siae-api",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["scripts/serve.py"],
+      "port": 8000
     }
   ]
 }

@@ -15,6 +15,10 @@ MODEL_KERAS_PATH = ARTIFACTS_DIR / "model.keras"
 TABULAR_PREPROCESSOR_PATH = ARTIFACTS_DIR / "tabular_preprocessor.joblib"
 LABEL_ENCODER_PATH = ARTIFACTS_DIR / "label_encoder.joblib"
 METADATA_PATH = ARTIFACTS_DIR / "metadata.json"
+METRICS_REPORT_PATH = ARTIFACTS_DIR / "metrics_report.json"
+
+# Versión del sistema (modelo + API)
+PROJECT_VERSION = "2.0.0"
 
 # Columnas del Dataset (Se excluye porcentaje_procesos_documentados por fuga de etiqueta determinista)
 NUMERICAL_COLS = ["presupuesto_anual_tecnología"]

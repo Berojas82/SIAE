@@ -7,6 +7,7 @@ import json
 import joblib
 import numpy as np
 import pandas as pd
+from datetime import datetime
 from pathlib import Path
 from sklearn.preprocessing import LabelEncoder
 from sklearn.utils.class_weight import compute_class_weight
@@ -29,7 +30,10 @@ from src.utils.constants import (
     TABULAR_PREPROCESSOR_PATH,
     LABEL_ENCODER_PATH,
     METADATA_PATH,
-    ARTIFACTS_DIR
+    METRICS_REPORT_PATH,
+    ARTIFACTS_DIR,
+    PROJECT_VERSION,
+    TRANSFORMER_MODEL_NAME
 )
 from src.utils.logger import get_logger
 
@@ -122,7 +126,13 @@ def main():
     joblib.dump(tabular_preprocessor, TABULAR_PREPROCESSOR_PATH)
     joblib.dump(label_encoder, LABEL_ENCODER_PATH)
 
+    fecha_entrenamiento = datetime.now().isoformat(timespec="seconds")
+
     metadata = {
+        "version": PROJECT_VERSION,
+        "fecha_entrenamiento": fecha_entrenamiento,
+        "nlp_model": TRANSFORMER_MODEL_NAME,
+        "text_embedding_dim": text_dim,
         "num_classes": num_classes,
         "classes": classes_list,
         "tabular_input_dim": tabular_dim,
@@ -131,6 +141,20 @@ def main():
     }
     with open(METADATA_PATH, "w", encoding="utf-8") as f:
         json.dump(metadata, f, indent=4, ensure_ascii=False)
+
+    # Reporte de métricas independiente (requisito de entrega)
+    metrics_report = {
+        "version": PROJECT_VERSION,
+        "fecha_entrenamiento": fecha_entrenamiento,
+        "accuracy": audit_results["global_metrics"]["accuracy"],
+        "f1_macro": audit_results["global_metrics"]["f1_macro"],
+        "fairness_audit": audit_results["fairness_audit"],
+        "confusion_matrix": audit_results["global_metrics"]["confusion_matrix"],
+        "classification_report": audit_results["global_metrics"]["classification_report"]
+    }
+    with open(METRICS_REPORT_PATH, "w", encoding="utf-8") as f:
+        json.dump(metrics_report, f, indent=4, ensure_ascii=False)
+    logger.info(f"Reporte de métricas escrito en {METRICS_REPORT_PATH}")
 
     logger.info("¡ENTRENAMIENTO Y ARTEFACTOS PROCESADOS EXITOSAMENTE!")
 

@@ -173,6 +173,30 @@
 
         </div><!-- /grid-layout -->
 
+        <!-- ── DASHBOARD COMPARATIVO POR SECTOR ───────────────── -->
+        <section class="card dashboard-card" id="dashboardSection" aria-labelledby="dashboardTitle">
+            <h2 id="dashboardTitle">📈 Comparativa por Sector</h2>
+            <p class="dashboard-desc" id="dashboardDesc">
+                Distribución de la madurez digital en la muestra de referencia.
+            </p>
+
+            <div class="chart-block">
+                <h4 class="chart-title">Distribución de niveles de madurez por sector</h4>
+                <div id="chartDistribucion" class="chart-container">
+                    <p class="chart-empty">Cargando datos de referencia...</p>
+                </div>
+            </div>
+
+            <div class="chart-block">
+                <h4 class="chart-title" id="chartComparativaTitle">
+                    Su sector frente al promedio general
+                </h4>
+                <div id="chartComparativa" class="chart-container">
+                    <p class="chart-empty">Seleccione un sector para ver la comparativa.</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Nota ética -->
         <p class="nota-etica">
             * Este diagnóstico es orientativo y no reemplaza una consultoría profesional.
@@ -180,6 +204,7 @@
 
     </main>
 
+    <script src="js/charts.js"></script>
     <script src="js/app.js"></script>
 </body>
 
